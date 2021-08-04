@@ -1,0 +1,24 @@
+
+-- some.field come from c++
+
+local AutoRobotInterface = CS.AutoRobot.AutoRobotInterface
+local TestObj = AutoRobotInterface()
+
+AutoTest={}
+
+AutoTest.gIsEnableAutoTest = true
+AutoTest.gIsEnableAutoTest4XUP = true
+
+function AutoTest.GetEnableAutoTestFlag()
+	local t = {}
+	t[1] = AutoTest.gIsEnableAutoTest
+	t[2] = AutoTest.gIsEnableAutoTest4XUP
+	return t
+end
+
+
+function AutoTest.TestFunc(CmdStr)
+	AutoRobotInterface.TestFunc(CmdStr)
+end
+
+return AutoTest
